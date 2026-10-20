@@ -704,18 +704,6 @@ a { color: inherit; }
 }
 .story--feature .story__title { max-width: 26ch; }
 .story--feature .story__dek { max-width: 58ch; }
-.story--feature .story__main {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  height: 100%;
-}
-.story--feature .kv {
-  width: 100%;
-  margin-top: auto;
-  padding-top: 1.1rem;
-  border-top: 1px solid var(--rule);
-}
 
 .awards {
   list-style: none;
