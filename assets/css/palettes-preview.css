@@ -267,3 +267,45 @@ body {
 .sw-accent { background: var(--accent); }
 .sw-accent2 { background: var(--accent-2); }
 .sw-band { background: var(--band); }
+
+/* ---------- jump nav (proof pages only) ---------- */
+.pv-jump {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 5px 6px;
+  max-width: 1180px;
+  margin: 0 auto 22px;
+  padding: 9px 11px;
+  background: #1b1a17;
+  color: #efe7da;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.6rem;
+  line-height: 1;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(239, 231, 218, 0.28);
+}
+.pv-jump span { color: rgba(239, 231, 218, 0.52); margin-left: 8px; }
+.pv-jump span:first-child { margin-left: 0; }
+.pv-jump a {
+  color: #efe7da;
+  text-decoration: none;
+  padding: 4px 7px;
+  border: 1px solid rgba(239, 231, 218, 0.3);
+  border-radius: 2px;
+}
+.pv-jump a:hover { background: #efe7da; color: #1b1a17; }
+.pv-jump a:focus-visible { outline: 2px solid #c8a26a; outline-offset: 2px; }
+
+/* keep sticky bar from covering the target */
+.sheet, .tt-card { scroll-margin-top: 56px; }
+
+@media (max-width: 34rem) {
+  .pv-jump { font-size: 0.55rem; gap: 4px; padding: 8px 8px; }
+  .pv-jump a { padding: 3px 5px; }
+  .pv-jump span { margin-left: 4px; }
+}
