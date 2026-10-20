@@ -1,0 +1,94 @@
+/* proof-num/proof.css — numeral treatments for the pressmark fact strip.
+   Standalone: own @font-face, own tokens, no dependency on the site sheet.
+   The site CSP is style-src 'self' — no inline <style>, no style=. */
+
+@font-face{font-family:'Source Serif 4';font-style:normal;font-weight:200 900;font-display:swap;
+  src:url('/assets/fonts/source-serif-4-latin.woff2') format('woff2');}
+@font-face{font-family:'Source Serif 4';font-style:italic;font-weight:200 900;font-display:swap;
+  src:url('/assets/fonts/source-serif-4-italic-latin.woff2') format('woff2');}
+@font-face{font-family:'Source Sans 3';font-style:normal;font-weight:200 900;font-display:swap;
+  src:url('/assets/fonts/source-sans-3-latin.woff2') format('woff2');}
+
+:root{
+  --paper:#f8f5f1; --paper-2:#fdfcf9; --wash:#f3ebe3;
+  --ink:#150d0a; --ink-soft:#39312d; --muted:#615955;
+  --rule:rgba(21,13,10,.14); --accent:#ba4600;
+  --serif:'Source Serif 4',ui-serif,Georgia,'Times New Roman',serif;
+  --sans:'Source Sans 3',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:var(--sans); font-size:16px; line-height:1.5;
+  -webkit-font-smoothing:antialiased;
+}
+.tag{
+  font-size:.72rem; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--muted); padding:26px 40px 0; margin:0;
+}
+.tag b{color:var(--accent)}
+.wrap{max-width:1180px; margin:0 auto; padding:0 40px 80px}
+
+.panel{padding:34px 0 40px; border-bottom:1px solid var(--rule)}
+.panel:last-child{border-bottom:0}
+.head{display:flex; align-items:baseline; gap:14px; margin:0 0 4px}
+.no{
+  font-family:var(--sans); font-weight:500; font-variant-numeric:tabular-nums;
+  font-size:.72rem; letter-spacing:.16em; color:var(--accent);
+}
+.name{font-family:var(--serif); font-size:1.3rem; margin:0; letter-spacing:-.01em}
+.note{margin:2px 0 22px; color:var(--muted); font-size:.86rem}
+
+/* the strip, exactly as the site builds it */
+.pressmark{
+  list-style:none; margin:0; padding:1.2rem 0 1.3rem;
+  border-top:1px solid var(--ink); border-bottom:3px solid var(--ink);
+  display:flex; flex-wrap:wrap; align-items:baseline; gap:.55rem 0;
+  font-family:var(--sans); font-size:.84rem; color:var(--muted);
+}
+.pressmark li{display:flex; align-items:baseline; gap:.45em}
+.pressmark li:not(:last-child)::after{content:'·'; margin:0 1.15rem; color:var(--accent)}
+
+/* ---- shared numeral base ---- */
+.num{
+  font-family:var(--serif); font-size:1.62rem; font-weight:400;
+  letter-spacing:-.028em; line-height:1; color:var(--ink);
+}
+.num--word{font-style:italic}
+.slash{color:var(--accent); padding:0 .05em}
+
+/* 01 — current site: old-style figures */
+.t01 .num{font-variant-numeric:oldstyle-nums}
+
+/* 02 — lining, tabular */
+.t02 .num{font-variant-numeric:lining-nums tabular-nums}
+
+/* 03 — old-style number, unit as a lowered small letter */
+.t03 .num{font-variant-numeric:oldstyle-nums}
+.t03 .unit{font-size:.56em; letter-spacing:.02em; margin-left:.04em}
+
+/* 04 — lining number, unit raised in accent */
+.t04 .num{font-variant-numeric:lining-nums tabular-nums}
+.t04 .unit{font-size:.5em; color:var(--accent); vertical-align:.62em; letter-spacing:.04em; margin-left:.06em}
+
+/* 05 — lining, unit in old-style small, letterspaced */
+.t05 .num{font-variant-numeric:lining-nums tabular-nums}
+.t05 .unit{font-size:.62em; font-style:italic; letter-spacing:.06em; margin-left:.05em}
+
+/* 06 — lining, reduced cap-height unit (classic newspaper stat treatment) */
+.t06 .num{font-variant-numeric:lining-nums tabular-nums}
+.t06 .unit{font-size:.74em; letter-spacing:.02em; margin-left:.06em}
+.t06 .plus{font-size:.46em; vertical-align:.7em}
+
+/* the plus as a unit rather than a superscript */
+.plus{font-size:.5em; color:var(--accent); vertical-align:.62em; margin-left:.04em; letter-spacing:.02em}
+
+/* zoomed specimen */
+.spec{display:flex; flex-wrap:wrap; gap:28px; margin-top:22px}
+.spec figure{margin:0; padding:10px 16px 12px; background:var(--paper-2); border:1px solid var(--rule)}
+.spec figcaption{font-size:.68rem; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); margin-bottom:6px}
+.spec b{font-family:var(--serif); font-weight:400; font-size:2.4rem; line-height:1; color:var(--ink); display:block}
+.spec .n1{font-variant-numeric:oldstyle-nums}
+.spec .n2{font-variant-numeric:lining-nums tabular-nums}
+.spec i{font-style:normal; color:var(--muted); font-size:.72rem; display:block; margin-top:6px}

@@ -502,11 +502,25 @@ a { color: inherit; }
   letter-spacing: -0.028em;
   line-height: 1;
   color: var(--ink);
-  /* old-style figures: book setting, and the page's identity gesture */
-  font-variant-numeric: oldstyle-nums;
+  /* lining, tabular figures: uniform cap-height, so 13 and 100 read at the
+     same size. Old-style figures dropped 13 to x-height and broke the strip. */
+  font-variant-numeric: lining-nums tabular-nums;
 }
-.num sup { font-size: 0.42em; vertical-align: super; color: var(--accent); }
 .num--word { font-style: italic; }
+/* a unit set small but on the baseline — newspaper stat setting, not a
+   superscript or a subscript */
+.num__unit {
+  font-size: 0.74em;
+  letter-spacing: 0.02em;
+  margin-left: 0.06em;
+}
+.num__plus {
+  font-size: 0.46em;
+  vertical-align: 0.7em;
+  color: var(--accent);
+  letter-spacing: 0.02em;
+  margin-left: 0.04em;
+}
 .slash { color: var(--accent); padding: 0 0.05em; }
 
 /* ---------- sections ---------- */
@@ -1006,7 +1020,7 @@ html[data-lang='es'] #work [data-lang='en'] { display: none; }
   margin-bottom: 0.85rem;
 }
 .cred-list { margin: 0; }
-/* dot leaders: the page's second identity gesture (see .num's old-style figures) */
+/* dot leaders: the page's second identity gesture (see .num's lining figures) */
 .cred-list > div {
   display: flex;
   align-items: baseline;
