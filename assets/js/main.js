@@ -1,4 +1,4 @@
-/* Interaction layer: theme, scroll progress, mobile nav, reveal, section spy. */
+/* Interaction layer: theme, scroll progress, mobile nav, dateline, section spy. */
 (function () {
   'use strict';
 
@@ -36,7 +36,6 @@
 
   /* ---------- scroll progress + masthead state ---------- */
   var bar = document.getElementById('progressBar');
-  var masthead = document.getElementById('masthead');
   var ticking = false;
 
   function onScroll() {
@@ -47,7 +46,6 @@
       var track = document.documentElement.scrollHeight - window.innerHeight;
       var ratio = track > 0 ? Math.min(1, Math.max(0, y / track)) : 0;
       if (bar) bar.style.transform = 'scaleX(' + ratio.toFixed(4) + ')';
-      if (masthead) masthead.classList.toggle('is-scrolled', y > 10);
       ticking = false;
     });
   }
@@ -57,23 +55,23 @@
 
   /* ---------- mobile navigation ---------- */
   var menuBtn = document.getElementById('menuBtn');
-  var nav = document.getElementById('nav');
+  var navList = document.getElementById('navList');
 
   function closeMenu() {
-    if (!nav || !menuBtn) return;
-    nav.classList.remove('is-open');
+    if (!navList || !menuBtn) return;
+    navList.classList.remove('is-open');
     menuBtn.setAttribute('aria-expanded', 'false');
     menuBtn.setAttribute('aria-label', 'Open menu');
   }
 
-  if (menuBtn && nav) {
+  if (menuBtn && navList) {
     menuBtn.addEventListener('click', function () {
-      var open = nav.classList.toggle('is-open');
+      var open = navList.classList.toggle('is-open');
       menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
       menuBtn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
     });
 
-    nav.addEventListener('click', function (event) {
+    navList.addEventListener('click', function (event) {
       if (event.target.closest('a')) closeMenu();
     });
 
@@ -82,8 +80,8 @@
     });
 
     document.addEventListener('click', function (event) {
-      if (!nav.classList.contains('is-open')) return;
-      if (nav.contains(event.target) || menuBtn.contains(event.target)) return;
+      if (!navList.classList.contains('is-open')) return;
+      if (navList.contains(event.target) || menuBtn.contains(event.target)) return;
       closeMenu();
     });
 
@@ -92,25 +90,14 @@
     });
   }
 
-  /* ---------- reveal on scroll ---------- */
-  var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var reveals = Array.prototype.slice.call(document.querySelectorAll('.reveal'));
-
-  if (prefersReduced || !('IntersectionObserver' in window)) {
-    reveals.forEach(function (el) { el.classList.add('is-in'); });
-  } else {
-    var revealObserver = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (!entry.isIntersecting) return;
-        entry.target.classList.add('is-in');
-        revealObserver.unobserve(entry.target);
-      });
-    }, { rootMargin: '0px 0px -6% 0px', threshold: 0.06 });
-
-    reveals.forEach(function (el, index) {
-      el.style.transitionDelay = ((index % 3) * 70) + 'ms';
-      revealObserver.observe(el);
-    });
+  /* ---------- masthead dateline ---------- */
+  var mastDate = document.getElementById('mastDate');
+  if (mastDate) {
+    try {
+      mastDate.textContent = new Intl.DateTimeFormat('en-GB', {
+        weekday: 'long', day: 'numeric', month: 'long', year: 'numeric'
+      }).format(new Date());
+    } catch (err) { /* keep the static date */ }
   }
 
   /* ---------- language filter (selected work) ---------- */

@@ -31,6 +31,7 @@
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
 <link rel="preload" href="assets/fonts/newsreader-roman-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/ibm-plex-mono-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/css/styles.css">
 <script src="assets/js/theme.js"></script>
 
@@ -41,36 +42,38 @@
 <div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
 
 <header class="masthead" id="masthead">
-  <div class="masthead__inner">
-    <a class="brand" href="#top">
-      <span class="brand__mark" aria-hidden="true">DT</span>
-      <span class="brand__words">
-        <span class="brand__name">David Tarazona</span>
-        <span class="brand__role" aria-hidden="true">Journalist · Due diligence · Bogotá</span>
-      </span>
-    </a>
+    <div class="masthead__sheet">
+      <p class="mast-line">
+        <span>Bogotá, Colombia · <span id="mastDate">Tuesday, 20 October 2026</span></span>
+        <span class="mast-line__edition" aria-hidden="true">Vol. I — No. 13</span>
+      </p>
+      <a class="mast-name" href="#top">David Tarazona</a>
+      <p class="mast-role">Journalist · Due diligence · Bogotá · GMT−5</p>
+      <div class="mast-rule" aria-hidden="true"></div>
+    </div>
+  </header>
 
-    <nav class="nav" id="nav" aria-label="Primary">
-      <ul class="nav__list">
+  <nav class="nav" id="nav" aria-label="Primary">
+    <div class="nav__inner">
+      <a class="nav__brand" href="#top">David Tarazona</a>
+      <ul class="nav__list" id="navList">
         <li><a href="#work">Work</a></li>
         <li><a href="#investigations">Investigations</a></li>
         <li><a href="#desk">Desk</a></li>
         <li><a href="#about">About</a></li>
+        <li><a href="#contact">Get in touch</a></li>
       </ul>
-      <a class="btn btn--sm" href="#contact">Get in touch</a>
-    </nav>
-
-    <div class="masthead__tools">
-      <button class="icon-btn" id="themeToggle" type="button" aria-label="Switch to dark theme" aria-pressed="false">
-        <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.6M12 18.9v2.6M2.5 12h2.6M18.9 12h2.6M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M18.7 5.3l-1.8 1.8M7.1 16.9l-1.8 1.8"/></svg>
-        <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 14.6A8.4 8.4 0 1 1 9.4 4a6.8 6.8 0 0 0 10.6 10.6Z"/></svg>
-      </button>
-      <button class="icon-btn menu-btn" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav">
-        <span></span><span></span>
-      </button>
+      <div class="nav__tools">
+        <button class="icon-btn" id="themeToggle" type="button" aria-label="Switch to dark theme" aria-pressed="false">
+          <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.6M12 18.9v2.6M2.5 12h2.6M18.9 12h2.6M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M18.7 5.3l-1.8 1.8M7.1 16.9l-1.8 1.8"/></svg>
+          <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 14.6A8.4 8.4 0 1 1 9.4 4a6.8 6.8 0 0 0 10.6 10.6Z"/></svg>
+        </button>
+        <button class="icon-btn menu-btn" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navList">
+          <span></span><span></span>
+        </button>
+      </div>
     </div>
-  </div>
-</header>
+  </nav>
 
 <main id="main">
   <a id="top" class="anchor" aria-hidden="true"></a>
@@ -141,7 +144,7 @@
       </div>
     </header>
 
-    <article class="lead-story reveal" data-lang="en">
+    <article class="lead-story" data-lang="en">
       <p class="meta-line">
         <span class="meta-line__outlet">FinTara · InsiderFinance Wire</span>
         <span class="meta-line__year">2025 — present</span>
@@ -155,22 +158,22 @@
       </p>
       <ul class="story-links">
         <li><a href="https://fintara.app/blog" target="_blank" rel="noopener noreferrer">FinTara — the English desk <span aria-hidden="true">↗</span></a></li>
-        <li><a href="https://medium.com/insiderfinance/reddit-the-market-panicked-heres-why-i-m-buying-bd11081476db" target="_blank" rel="noopener noreferrer">Reddit panicked. Here's why I'm buying — Medium <span aria-hidden="true">↗</span></a></li>
+        <li><a href="https://medium.com/insiderfinance/reddit-the-market-panicked-heres-why-i-m-buying-bd11081476db" target="_blank" rel="noopener noreferrer">Reddit panicked. Here’s why I’m buying — Medium <span aria-hidden="true">↗</span></a></li>
       </ul>
       <p class="kv"><span>English</span><span>Equities</span><span>Macro</span><span>SEC filings</span><span>Congressional trading</span></p>
     </article>
 
-    <article class="lead-story reveal" data-lang="es">
+    <article class="lead-story" data-lang="es">
       <p class="meta-line">
         <span class="meta-line__outlet">ICIJ · Connectas · El Espectador</span>
         <span class="meta-line__year">2017</span>
       </p>
       <h3 class="lead-story__title">Paradise Papers — the Colombia chapter</h3>
       <p class="lead-story__dek">
-        Part of the ICIJ's 100-outlet global consortium. I worked the Colombian slice of the
+        Part of the ICIJ’s 100-outlet global consortium. I worked the Colombian slice of the
         leak: offshore structures tied to Ecopetrol, to then–Defence Minister Gabriel Silva
         Luján, and to the circle around President Juan Manuel Santos. The findings ran in
-        <em>El Espectador</em> and in the consortium's public database.
+        <em>El Espectador</em> and in the consortium’s public database.
       </p>
       <ul class="story-links">
         <li><a href="https://www.elespectador.com/noticias/el-mundo/gabriel-silva-lujan-el-hombre-global-articulo-721574" target="_blank" rel="noopener noreferrer">Gabriel Silva Luján, el hombre global <span aria-hidden="true">↗</span></a></li>
@@ -181,20 +184,20 @@
     </article>
 
     <ol class="stories">
-      <li class="story reveal" data-lang="en">
+      <li class="story" data-lang="en">
         <p class="meta-line">
           <span class="meta-line__outlet">FinTara</span>
           <span class="meta-line__year">2026</span>
         </p>
-        <h3 class="story__title"><a href="https://fintara.app/blog/buffett-13f-alphabet-bet-visa-exit" target="_blank" rel="noopener noreferrer">Buffett's 13F shows a $10B Alphabet bet and a Visa exit <span aria-hidden="true">↗</span></a></h3>
+        <h3 class="story__title"><a href="https://fintara.app/blog/buffett-13f-alphabet-bet-visa-exit" target="_blank" rel="noopener noreferrer">Buffett’s 13F shows a $10B Alphabet bet and a Visa exit <span aria-hidden="true">↗</span></a></h3>
         <p class="story__dek">
-          Berkshire's quarterly filing read from the record — what the $10B Alphabet build-up
+          Berkshire’s quarterly filing read from the record — what the $10B Alphabet build-up
           and the Visa exit say about how the position is actually being managed.
         </p>
         <p class="kv"><span>13F filings</span><span>Berkshire</span><span>Position analysis</span></p>
       </li>
 
-      <li class="story reveal" data-lang="en">
+      <li class="story" data-lang="en">
         <p class="meta-line">
           <span class="meta-line__outlet">FinTara</span>
           <span class="meta-line__year">2026</span>
@@ -207,7 +210,7 @@
         <p class="kv"><span>Congressional trading</span><span>STOCK Act</span><span>Filings</span></p>
       </li>
 
-      <li class="story reveal" data-lang="en">
+      <li class="story" data-lang="en">
         <p class="meta-line">
           <span class="meta-line__outlet">FinTara</span>
           <span class="meta-line__year">2026</span>
@@ -220,20 +223,20 @@
         <p class="kv"><span>SEC Form 4</span><span>Insider transactions</span><span>Explainer</span></p>
       </li>
 
-      <li class="story reveal" data-lang="en">
+      <li class="story" data-lang="en">
         <p class="meta-line">
           <span class="meta-line__outlet">ICIJ</span>
           <span class="meta-line__year">2017</span>
         </p>
-        <h3 class="story__title"><a href="https://offshoreleaks.icij.org/stories/juan-manuel-santos" target="_blank" rel="noopener noreferrer">The Paradise Papers, in the consortium's public records <span aria-hidden="true">↗</span></a></h3>
+        <h3 class="story__title"><a href="https://offshoreleaks.icij.org/stories/juan-manuel-santos" target="_blank" rel="noopener noreferrer">The Paradise Papers, in the consortium’s public records <span aria-hidden="true">↗</span></a></h3>
         <p class="story__dek">
-          The Colombian chapter in the ICIJ's Offshore Leaks database — offshore structures
+          The Colombian chapter in the ICIJ’s Offshore Leaks database — offshore structures
           tied to Ecopetrol and the circle around President Juan Manuel Santos, searchable
           by anyone.
         </p>
         <p class="kv"><span>ICIJ</span><span>Offshore finance</span><span>Public database</span></p>
       </li>
-            <li class="story story--feature reveal" data-lang="es">
+            <li class="story story--feature" data-lang="es">
         <div class="story__main">
           <p class="meta-line">
             <span class="meta-line__outlet">Cuestión Pública</span>
@@ -270,28 +273,28 @@
         </figure>
       </li>
 
-      <li class="story reveal" data-lang="es">
+      <li class="story" data-lang="es">
         <p class="meta-line">
           <span class="meta-line__outlet">Mongabay Latam</span>
           <span class="meta-line__year">2022 — 2024</span>
         </p>
         <h3 class="story__title"><a href="https://es.mongabay.com/2023/12/coltan-oro-pistas-clandestinas-grupos-armados-desangran-al-guainia/" target="_blank" rel="noopener noreferrer">Contributing editor: who profits from the Guainía gold rush <span aria-hidden="true">↗</span></a></h3>
         <p class="story__dek">
-          Reported and edited long-form environmental investigations for Mongabay's
+          Reported and edited long-form environmental investigations for Mongabay’s
           Spanish-language desk — deforestation, extractive industries and biodiversity loss
           across Colombia and the wider region.
         </p>
         <p class="kv"><span>Environmental reporting</span><span>Long-form</span><span>Spanish / English</span></p>
       </li>
 
-      <li class="story reveal" data-lang="es">
+      <li class="story" data-lang="es">
         <p class="meta-line">
           <span class="meta-line__outlet">La Marea · JournalismFund.eu</span>
           <span class="meta-line__year">2016 — 2017</span>
         </p>
         <h3 class="story__title"><a href="https://www.lamarea.com/2017/08/11/b/" target="_blank" rel="noopener noreferrer">The EIB in Kenya: a geothermal plant and the Maasai who lost the land <span aria-hidden="true">↗</span></a></h3>
         <p class="story__dek">
-          Grant-funded investigation into the European Investment Bank's financing of the
+          Grant-funded investigation into the European Investment Bank’s financing of the
           Olkaria geothermal project and the displacement of Maasai communities around it.
           Published in <em>La Marea</em> (Spain) and syndicated across European outlets.
         </p>
@@ -310,16 +313,16 @@
     </header>
 
     <ol class="index-list">
-      <li class="index-row reveal">
+      <li class="index-row">
         <p class="index-row__year">2022</p>
         <div class="index-row__body">
           <h3 class="index-row__title"><a href="https://cuestionpublica.com/corfi-rueda-ejecutivos-salpicados-avalbrecht/" target="_blank" rel="noopener noreferrer">Odebrecht: who signed off the $11M <span aria-hidden="true">↗</span></a></h3>
-          <p class="index-row__dek">Reconstructed the authorisation chain behind the Ruta del Sol bribes from SIC Resolution 67837 — shell-company flows, Grupo Aval executives, and the then–attorney general's position in the network.</p>
+          <p class="index-row__dek">Reconstructed the authorisation chain behind the Ruta del Sol bribes from SIC Resolution 67837 — shell-company flows, Grupo Aval executives, and the then–attorney general’s position in the network.</p>
         </div>
         <p class="index-row__outlet">Cuestión Pública</p>
       </li>
 
-      <li class="index-row reveal">
+      <li class="index-row">
         <p class="index-row__year">2021</p>
         <div class="index-row__body">
           <h3 class="index-row__title"><a href="https://cuestionpublica.com/ifc-banco-mundial-ruta-del-sol-guarin-ulloa-structure/" target="_blank" rel="noopener noreferrer">An IFC officer, a winning bidder, and a marriage <span aria-hidden="true">↗</span></a></h3>
@@ -328,7 +331,7 @@
         <p class="index-row__outlet">Cuestión Pública</p>
       </li>
 
-      <li class="index-row reveal">
+      <li class="index-row">
         <p class="index-row__year">2020</p>
         <div class="index-row__body">
           <h3 class="index-row__title"><a href="https://cuestionpublica.com/sabemos-lo-que-hiciste/" target="_blank" rel="noopener noreferrer">Legislative due diligence: <em>Sabemos lo que hiciste</em> <span aria-hidden="true">↗</span></a></h3>
@@ -337,7 +340,7 @@
         <p class="index-row__outlet">Cuestión Pública</p>
       </li>
 
-      <li class="index-row reveal">
+      <li class="index-row">
         <p class="index-row__year">2019</p>
         <div class="index-row__body">
           <h3 class="index-row__title"><a href="https://cuestionpublica.com/apartamento-soltero-uribe-ochoa/" target="_blank" rel="noopener noreferrer">A 1979 property deal, traced forward <span aria-hidden="true">↗</span></a></h3>
@@ -346,11 +349,11 @@
         <p class="index-row__outlet">Cuestión Pública</p>
       </li>
 
-      <li class="index-row reveal">
+      <li class="index-row">
         <p class="index-row__year">2022</p>
         <div class="index-row__body">
           <h3 class="index-row__title"><a href="https://cuestionpublica.com/californication/" target="_blank" rel="noopener noreferrer">Rural land, urban approvals, regulatory risk <span aria-hidden="true">↗</span></a></h3>
-          <p class="index-row__dek">How a former first family's rural estate became a large-scale urban development: land-registry changes, agency approvals and the conflicts of interest that never appeared in the file.</p>
+          <p class="index-row__dek">How a former first family’s rural estate became a large-scale urban development: land-registry changes, agency approvals and the conflicts of interest that never appeared in the file.</p>
         </div>
         <p class="index-row__outlet">Cuestión Pública</p>
       </li>
@@ -368,12 +371,12 @@
       <p class="section__index" aria-hidden="true">03</p>
       <div class="section__headText">
         <h2 class="section__title" id="deskTitle">The desk</h2>
-        <p class="section__note">What I build when I'm not chasing a document.</p>
+        <p class="section__note">What I build when I’m not chasing a document.</p>
       </div>
     </header>
 
     <div class="desk-grid">
-      <article class="desk-card reveal">
+      <article class="desk-card">
         <p class="meta-line">
           <span class="meta-line__outlet">FinTara</span>
           <span class="meta-line__year">2025 — present</span>
@@ -387,12 +390,12 @@
         </p>
         <ul class="story-links">
           <li><a href="https://fintara.app" target="_blank" rel="noopener noreferrer">fintara.app <span aria-hidden="true">↗</span></a></li>
-          <li><a href="https://medium.com/insiderfinance/reddit-the-market-panicked-heres-why-i-m-buying-bd11081476db" target="_blank" rel="noopener noreferrer">Reddit panicked. Here's why I'm buying. <span aria-hidden="true">↗</span></a></li>
+          <li><a href="https://medium.com/insiderfinance/reddit-the-market-panicked-heres-why-i-m-buying-bd11081476db" target="_blank" rel="noopener noreferrer">Reddit panicked. Here’s why I’m buying. <span aria-hidden="true">↗</span></a></li>
         </ul>
         <p class="kv"><span>Python</span><span>Docker</span><span>LLM orchestration</span><span>DuckDB</span><span>Parquet</span></p>
       </article>
 
-      <article class="desk-card reveal">
+      <article class="desk-card">
         <p class="meta-line">
           <span class="meta-line__outlet">Tara English</span>
           <span class="meta-line__year">2025 — present</span>
@@ -449,7 +452,7 @@
     </header>
 
     <div class="about">
-      <div class="about__prose reveal">
+      <div class="about__prose">
         <p class="dropcap">
           I started in newsrooms in Bogotá, went to Amsterdam to learn data journalism with
           OneWorld, and took an MA in Data Journalism at Tilburg University on a full merit
@@ -470,12 +473,12 @@
 
         <p class="principle">
           <span class="principle__label">Method</span>
-          Documents first, narrative second. If it isn't in the record, it isn't in the story.
+          Documents first, narrative second. If it isn’t in the record, it isn’t in the story.
         </p>
       </div>
 
       <aside class="about__side" aria-label="Credentials">
-        <div class="cred-card reveal">
+        <div class="cred-card">
           <h3 class="cred-card__title">Education</h3>
           <dl class="cred-list">
             <div>
@@ -489,7 +492,7 @@
           </dl>
         </div>
 
-        <div class="cred-card reveal">
+        <div class="cred-card">
           <h3 class="cred-card__title">Languages</h3>
           <dl class="cred-list">
             <div><dt>Spanish</dt><dd>Native</dd></div>
@@ -498,7 +501,7 @@
           </dl>
         </div>
 
-        <div class="cred-card reveal">
+        <div class="cred-card">
           <h3 class="cred-card__title">Teaching &amp; certification</h3>
           <dl class="cred-list">
             <div><dt>I-to-I TEFL</dt><dd>120-hour accredited certificate</dd></div>
