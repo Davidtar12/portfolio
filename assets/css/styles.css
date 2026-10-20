@@ -440,23 +440,12 @@ a { color: inherit; }
 .hero__actions { display: flex; flex-wrap: wrap; gap: 0.7rem; }
 
 .hero__figure { margin: 0; }
-.portrait {
-  position: relative;
-  overflow: hidden;
-  background: var(--wash);
-  border-radius: 2px;
-}
+/* the portrait is a cut-out: no frame, no wash, no inset hairline — it sits
+   directly on the paper in both themes */
 .portrait img {
   display: block;
   width: 100%;
   filter: saturate(0.94) contrast(1.02);
-}
-.portrait::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  box-shadow: inset 0 0 0 1px rgba(20, 22, 27, 0.1);
 }
 .hero__figure figcaption {
   margin-top: 0.85rem;
