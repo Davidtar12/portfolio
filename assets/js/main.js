@@ -113,6 +113,30 @@
     });
   }
 
+  /* ---------- language filter (selected work) ---------- */
+  var langBtns = Array.prototype.slice.call(document.querySelectorAll('.lang-btn'));
+
+  function paintLang() {
+    var current = root.getAttribute('data-lang');
+    langBtns.forEach(function (btn) {
+      var on = btn.getAttribute('data-lang-btn') === current;
+      btn.classList.toggle('is-active', on);
+      btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+    });
+  }
+
+  if (langBtns.length) {
+    paintLang();
+    langBtns.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var lang = btn.getAttribute('data-lang-btn');
+        root.setAttribute('data-lang', lang);
+        try { localStorage.setItem('dt-lang', lang); } catch (err) { /* private mode */ }
+        paintLang();
+      });
+    });
+  }
+
   /* ---------- section spy ---------- */
   var navLinks = Array.prototype.slice.call(document.querySelectorAll('.nav__list a'));
 

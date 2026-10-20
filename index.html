@@ -133,11 +133,34 @@
       <p class="section__index" aria-hidden="true">01</p>
       <div class="section__headText">
         <h2 class="section__title" id="workTitle">Selected work</h2>
-        <p class="section__note">Investigations that survived editors, lawyers and appeals.</p>
+        <p class="section__note">Selected texts — reporting that survived editors, lawyers and appeals.</p>
+        <div class="lang-toggle" role="group" aria-label="Filter selected work by language">
+          <button type="button" class="lang-btn" data-lang-btn="en">English</button>
+          <button type="button" class="lang-btn" data-lang-btn="es">Español</button>
+        </div>
       </div>
     </header>
 
-    <article class="lead-story reveal">
+    <article class="lead-story reveal" data-lang="en">
+      <p class="meta-line">
+        <span class="meta-line__outlet">FinTara · InsiderFinance Wire</span>
+        <span class="meta-line__year">2025 — present</span>
+      </p>
+      <h3 class="lead-story__title">The markets desk, in English</h3>
+      <p class="lead-story__dek">
+        Independent English-language coverage of equities, macro and congressional trading —
+        a hundred posts built the way I build an investigation: SEC filings, 13F positions and
+        insider-transaction data read from the record, then written in plain English. Published
+        at <em>FinTara</em> and syndicated to <em>InsiderFinance Wire</em> on Medium.
+      </p>
+      <ul class="story-links">
+        <li><a href="https://fintara.app/blog" target="_blank" rel="noopener noreferrer">FinTara — the English desk <span aria-hidden="true">↗</span></a></li>
+        <li><a href="https://medium.com/insiderfinance/reddit-the-market-panicked-heres-why-i-m-buying-bd11081476db" target="_blank" rel="noopener noreferrer">Reddit panicked. Here's why I'm buying — Medium <span aria-hidden="true">↗</span></a></li>
+      </ul>
+      <p class="kv"><span>English</span><span>Equities</span><span>Macro</span><span>SEC filings</span><span>Congressional trading</span></p>
+    </article>
+
+    <article class="lead-story reveal" data-lang="es">
       <p class="meta-line">
         <span class="meta-line__outlet">ICIJ · Connectas · El Espectador</span>
         <span class="meta-line__year">2017</span>
@@ -158,7 +181,59 @@
     </article>
 
     <ol class="stories">
-            <li class="story story--feature reveal">
+      <li class="story reveal" data-lang="en">
+        <p class="meta-line">
+          <span class="meta-line__outlet">FinTara</span>
+          <span class="meta-line__year">2026</span>
+        </p>
+        <h3 class="story__title"><a href="https://fintara.app/blog/buffett-13f-alphabet-bet-visa-exit" target="_blank" rel="noopener noreferrer">Buffett's 13F shows a $10B Alphabet bet and a Visa exit <span aria-hidden="true">↗</span></a></h3>
+        <p class="story__dek">
+          Berkshire's quarterly filing read from the record — what the $10B Alphabet build-up
+          and the Visa exit say about how the position is actually being managed.
+        </p>
+        <p class="kv"><span>13F filings</span><span>Berkshire</span><span>Position analysis</span></p>
+      </li>
+
+      <li class="story reveal" data-lang="en">
+        <p class="meta-line">
+          <span class="meta-line__outlet">FinTara</span>
+          <span class="meta-line__year">2026</span>
+        </p>
+        <h3 class="story__title"><a href="https://fintara.app/blog/congress-moves-to-ban-stock-trading-as-stock-act-violations-rise" target="_blank" rel="noopener noreferrer">Congress moves to ban stock trading as STOCK Act violations rise <span aria-hidden="true">↗</span></a></h3>
+        <p class="story__dek">
+          Congressional trading tracked through the filings — STOCK Act violations piling up as
+          the ban debate returns to the floor. The accountability beat, applied to markets.
+        </p>
+        <p class="kv"><span>Congressional trading</span><span>STOCK Act</span><span>Filings</span></p>
+      </li>
+
+      <li class="story reveal" data-lang="en">
+        <p class="meta-line">
+          <span class="meta-line__outlet">FinTara</span>
+          <span class="meta-line__year">2026</span>
+        </p>
+        <h3 class="story__title"><a href="https://fintara.app/blog/sec-form-4-insider-trading-explained" target="_blank" rel="noopener noreferrer">Why Colombian professionals misread SEC Form 4 signals <span aria-hidden="true">↗</span></a></h3>
+        <p class="story__dek">
+          Insider-transaction signals decoded for professionals outside the US market — the
+          bridge piece between the English desk and its Spanish-speaking readers.
+        </p>
+        <p class="kv"><span>SEC Form 4</span><span>Insider transactions</span><span>Explainer</span></p>
+      </li>
+
+      <li class="story reveal" data-lang="en">
+        <p class="meta-line">
+          <span class="meta-line__outlet">ICIJ</span>
+          <span class="meta-line__year">2017</span>
+        </p>
+        <h3 class="story__title"><a href="https://offshoreleaks.icij.org/stories/juan-manuel-santos" target="_blank" rel="noopener noreferrer">The Paradise Papers, in the consortium's public records <span aria-hidden="true">↗</span></a></h3>
+        <p class="story__dek">
+          The Colombian chapter in the ICIJ's Offshore Leaks database — offshore structures
+          tied to Ecopetrol and the circle around President Juan Manuel Santos, searchable
+          by anyone.
+        </p>
+        <p class="kv"><span>ICIJ</span><span>Offshore finance</span><span>Public database</span></p>
+      </li>
+            <li class="story story--feature reveal" data-lang="es">
         <div class="story__main">
           <p class="meta-line">
             <span class="meta-line__outlet">Cuestión Pública</span>
@@ -195,7 +270,7 @@
         </figure>
       </li>
 
-      <li class="story reveal">
+      <li class="story reveal" data-lang="es">
         <p class="meta-line">
           <span class="meta-line__outlet">Mongabay Latam</span>
           <span class="meta-line__year">2022 — 2024</span>
@@ -209,7 +284,7 @@
         <p class="kv"><span>Environmental reporting</span><span>Long-form</span><span>Spanish / English</span></p>
       </li>
 
-      <li class="story reveal">
+      <li class="story reveal" data-lang="es">
         <p class="meta-line">
           <span class="meta-line__outlet">La Marea · JournalismFund.eu</span>
           <span class="meta-line__year">2016 — 2017</span>
@@ -311,7 +386,7 @@
           built on Sharadar and DuckDB.
         </p>
         <ul class="story-links">
-          <li><a href="https://fintarasite.vercel.app" target="_blank" rel="noopener noreferrer">fintarasite.vercel.app <span aria-hidden="true">↗</span></a></li>
+          <li><a href="https://fintara.app" target="_blank" rel="noopener noreferrer">fintara.app <span aria-hidden="true">↗</span></a></li>
           <li><a href="https://medium.com/insiderfinance/reddit-the-market-panicked-heres-why-i-m-buying-bd11081476db" target="_blank" rel="noopener noreferrer">Reddit panicked. Here's why I'm buying. <span aria-hidden="true">↗</span></a></li>
         </ul>
         <p class="kv"><span>Python</span><span>Docker</span><span>LLM orchestration</span><span>DuckDB</span><span>Parquet</span></p>

@@ -6,5 +6,8 @@
   if (saved === 'light' || saved === 'dark') {
     document.documentElement.setAttribute('data-theme', saved);
   }
+  var savedLang = null;
+  try { savedLang = localStorage.getItem('dt-lang'); } catch (err) { savedLang = null; }
+  document.documentElement.setAttribute('data-lang', savedLang === 'es' ? 'es' : 'en');
   document.documentElement.classList.add('js');
 })();

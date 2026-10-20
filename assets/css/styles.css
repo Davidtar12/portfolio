@@ -695,6 +695,35 @@ a { color: inherit; }
   text-wrap: pretty;
 }
 .story .kv { margin-top: 0.75rem; }
+
+/* ---------- language toggle (selected work) ---------- */
+.lang-toggle {
+  display: none;
+  margin-top: 1.15rem;
+  width: max-content;
+  max-width: 100%;
+  border: 1px solid var(--rule-strong);
+}
+html[data-lang] .lang-toggle { display: flex; }
+.lang-btn {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  padding: 0.5rem 1.05rem;
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  cursor: pointer;
+  transition: color 0.2s var(--ease), background-color 0.2s var(--ease);
+}
+.lang-btn + .lang-btn { border-left: 1px solid var(--rule-strong); }
+.lang-btn.is-active { background: var(--ink); color: var(--paper); }
+.lang-btn:focus-visible { outline: 2px solid var(--cobalt); outline-offset: 2px; }
+
+html[data-lang='en'] #work [data-lang='es'] { display: none; }
+html[data-lang='es'] #work [data-lang='en'] { display: none; }
 /* ---------- featured story (Cuestión Pública) ---------- */
 .story--feature {
   display: grid;
