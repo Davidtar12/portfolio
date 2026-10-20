@@ -8,8 +8,8 @@ Live: <https://david-tarazona.vercel.app>
 ## Stack
 
 - Static HTML, CSS and vanilla JS. No framework, no build step, no dependencies.
-- Fonts self-hosted: [Newsreader](https://fonts.google.com/specimen/Newsreader) and
-  [Inter](https://fonts.google.com/specimen/Inter), both SIL Open Font License
+- Fonts self-hosted: [Source Serif 4](https://fonts.google.com/specimen/Source+Serif+4) and
+  [Source Sans 3](https://fonts.google.com/specimen/Source+Sans+3), both SIL Open Font License
   (license texts in `assets/fonts/`).
 - Light and dark themes (system preference + manual toggle, remembered in `localStorage`).
 - Responsive from 320px up, keyboard accessible, honours `prefers-reduced-motion`.
